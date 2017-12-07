@@ -3,13 +3,13 @@ Fake implementation of OpenAM interface for testing.
 
 A spring-boot application that mimics some of the behaviour of ForgeRock's [OpenAM product](https://www.forgerock.com/platform/access-management/).
 
-##Building
+## Building
 
 The application builds with gradle with the command `gradle package`.
 
-##Supported Endpoints
+## Supported Endpoints
 
-###Login : `/json/authenticate`
+### Login : `/json/authenticate`
 
      curl --request POST \
      --header "X-OpenAM-Username:user1" \
@@ -19,7 +19,7 @@ The application builds with gradle with the command `gradle package`.
      "localhost:8084/json/authenticate"
 
 
-###Logout : `/json/sessions?_action=logout`
+### Logout : `/json/sessions?_action=logout`
 
      curl --request POST \
      --header "iplanetDirectoryPro:invalidtoken" \
@@ -29,14 +29,14 @@ The application builds with gradle with the command `gradle package`.
 
 
 
-###Validate : `/openam/identity/isTokenValid`
+### Validate : `/openam/identity/isTokenValid`
 
      curl --request POST \
      --header "Content-Type: application/json" \
      --data "tokenid=INSERT_VALID_TOKEN" \
      "localhost:8084/openam/identity/isTokenValid"
 
-###Admin (not OpenAM) : `/admin/load`
+### Admin (not OpenAM) : `/admin/load`
 
      curl --request POST \
      --header "Content-Type: application/json" \
